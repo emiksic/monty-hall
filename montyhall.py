@@ -15,38 +15,19 @@ screen.fill(white)
 pygame.display.set_caption("Monty hall")
 pygame.display.flip()
 
-one = pygame.image.load('1.png')
-one = pygame.transform.scale(one, (50, 50))
-
-two = pygame.image.load('2.png')
-two = pygame.transform.scale(two, (50, 50))
-
-three = pygame.image.load('3.png')
-three = pygame.transform.scale(three, (50, 50))
-
-closed = pygame.image.load('closed.png')
+closed = pygame.image.load('photos\\closed.png')
 closed = pygame.transform.scale(closed, (200, 400))
 
-win = pygame.image.load('win.png')
+win = pygame.image.load('photos\\win.png')
 win = pygame.transform.scale(win, (200, 400))
 
-lose = pygame.image.load('lose.png')
+lose = pygame.image.load('photos\\lose.png')
 lose = pygame.transform.scale(lose, (200, 400))
 
-blank = pygame.image.load('blank.png')
+blank = pygame.image.load('photos\\blank.png')
 
-running = 1
+running = True
 
-screen.blit(one, (300, 0))
-screen.blit(two, (600, 0))
-screen.blit(three, (900, 0))
-screen.blit(closed, (225, 100))
-screen.blit(closed, (525, 100))
-screen.blit(closed, (825, 100))
-pygame.display.flip()
-
-
-  
 color = (255,255,255)
 color_black = (0,0,0)
 color_light = (170,170,170)
@@ -55,6 +36,26 @@ color_dark2 = (100,100,100)
 color_dark3 = (100,100,100)
 color_dark_lock = (100, 100, 100)
 color_darkk = (100,100,100)
+
+smallfont = pygame.font.SysFont('Corbel',50)
+one = smallfont.render('1' , True , color_black)
+two = smallfont.render('2' , True , color_black)
+three = smallfont.render('3' , True , color_black)
+text1 = smallfont.render('1' , True , color)
+text2 = smallfont.render('2' , True , color)
+text3 = smallfont.render('3' , True , color)
+text_yes = smallfont.render('DA' , True , color)
+text_no = smallfont.render('NE' , True , color)
+text_change = smallfont.render('Želiš li promjeniti odabir u vrata' , True , color_black)
+text_lock = smallfont.render('LOCK' , True , color)
+
+screen.blit(one, (300, 50))
+screen.blit(two, (600, 50))
+screen.blit(three, (900, 40))
+screen.blit(closed, (225, 100))
+screen.blit(closed, (525, 100))
+screen.blit(closed, (825, 100))
+pygame.display.flip()
 
 
 x1 = 300
@@ -76,15 +77,6 @@ lock = False
 n = False
 n2 = False
 text_on = False
-
-smallfont = pygame.font.SysFont('Corbel',50)
-text1 = smallfont.render('1' , True , color)
-text2 = smallfont.render('2' , True , color)
-text3 = smallfont.render('3' , True , color)
-text_yes = smallfont.render('DA' , True , color)
-text_no = smallfont.render('NE' , True , color)
-text_change = smallfont.render('Želiš li promjeniti odabir u vrata' , True , color_black)
-text_lock = smallfont.render('LOCK' , True , color)
 
 
 while running:
